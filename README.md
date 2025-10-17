@@ -18,6 +18,18 @@ Travel Office is a JavaFX-based desktop application that allows users to:
 - View purchase history
 - Manage travel bookings through an intuitive GUI
 
+## Screenshots
+
+### Main Application Window
+![Travel Office Main Window](docs/main.png)
+
+*The main interface showing trip browsing, filtering options, and booking functionality.*
+
+### Purchase History
+![Purchase History](docs/history.png)
+
+*View of purchased trips with detailed information about each booking.*
+
 ## Technologies
 
 - **Java** with JavaFX for GUI
