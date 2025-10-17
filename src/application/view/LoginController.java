@@ -47,15 +47,15 @@ public class LoginController {
 		}
     	
     	if (passwordFromDB.equals(passwordField.getText()) && (passwordField.getText().trim().length() > 0)) {
-    		mainWindow.getStage().setTitle(travelOfficeHelper.getBASE_TITLE() + "zalogowany u�ytkownik: " + loginField.getText());
-    		mainWindow.getMainWindowController().getLoginMenuItem().setText("Wyloguj");
+    		mainWindow.getStage().setTitle(travelOfficeHelper.getBASE_TITLE() + "logged user: " + loginField.getText());
+    		mainWindow.getMainWindowController().getLoginMenuItem().setText("Logout");
     		mainWindow.getMainWindowController().getHistoryMenuItem().setDisable(false);
     		mainWindow.getMainWindowController().setIdUser(idUser);
     		close(event);
     	} else {
-    		Alert alert = new Alert(AlertType.ERROR, "Nieprawid�owa nazwa u�ytkownika lub has�o!");
+    		Alert alert = new Alert(AlertType.ERROR, "Invalid username or password!");
     		alert.initModality(Modality.APPLICATION_MODAL);
-    		alert.setTitle("B��d");
+    		alert.setTitle("Error");
     		alert.setHeaderText(null);
     		alert.show();
     	}

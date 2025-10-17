@@ -122,12 +122,12 @@ public class BoughtTripsController implements Initializable {
  			dateArrivalLabel.setText(trip.getArrivalDateTime().toString());
  			dateDepartureLabel.setText(trip.getDepartureDateTime().toString());
  			durationLabel.setText(String.valueOf(trip.getDuration()));
- 			priceLabel.setText(trip.getPrice().divide(new BigDecimal(100)).setScale(2, RoundingMode.HALF_DOWN).toString() + " z�");
+ 			priceLabel.setText(trip.getPrice().divide(new BigDecimal(100)).setScale(2, RoundingMode.HALF_DOWN).toString() + " PLN");
  			seatsLabel.setText(String.valueOf(trip.getSeats()));
  			hotelNameLabel.setText(trip.getHotel().getName());
  			hotelCityLabel.setText(trip.getHotel().getCity());
  			hotelRatingLabel.setText(String.valueOf(trip.getHotel().getRting()));
- 			insuranceLabel.setText(trip.getInsurance() > 0 ? "wykupione" : "brak");
+ 			insuranceLabel.setText(trip.getInsurance() > 0 ? "purchased" : "none");
  			purchaseDateTimeLabel.setText(trip.getPurchaseDateTime());
  		} else {
  			tripImage.setImage(null);

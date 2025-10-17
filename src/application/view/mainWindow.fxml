@@ -22,24 +22,24 @@
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
-        <Menu mnemonicParsing="false" text="Plik">
+        <Menu mnemonicParsing="false" text="File">
           <items>
-            <MenuItem fx:id="loginMenuItem" mnemonicParsing="false" onAction="#login" text="Zaloguj">
+            <MenuItem fx:id="loginMenuItem" mnemonicParsing="false" onAction="#login" text="Login">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="L" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
-                  <MenuItem fx:id="historyMenuItem" disable="true" mnemonicParsing="false" onAction="#showHistory" text="Historia">
+                  <MenuItem fx:id="historyMenuItem" disable="true" mnemonicParsing="false" onAction="#showHistory" text="History">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="H" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
             <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" onAction="#close" text="Wyjście" />
+            <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" onAction="#close" text="Exit" />
           </items>
         </Menu>
-        <Menu mnemonicParsing="false" text="O aplikacji">
+        <Menu mnemonicParsing="false" text="About">
           <items>
-            <MenuItem mnemonicParsing="false" text="Autor" />
+            <MenuItem mnemonicParsing="false" text="Author" />
           </items>
         </Menu>
       </menus>
@@ -50,13 +50,13 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="45.0" prefWidth="800.0" spacing="10.0">
                      <children>
-                        <Label text="Wylot z:" />
+                        <Label text="Departure from:" />
                         <ComboBox fx:id="fromCountryChoice" prefWidth="120.0" />
                         <Separator orientation="VERTICAL" prefHeight="200.0" />
-                        <Label text="do:" />
+                        <Label text="to:" />
                         <ComboBox fx:id="toCountryChoice" layoutX="95.0" layoutY="20.0" prefWidth="120.0" />
                         <Separator orientation="VERTICAL" prefHeight="200.0" />
-                        <Label text="Między datami:" />
+                        <Label text="Between dates:" />
                         <DatePicker fx:id="fromDate" prefHeight="25.0" prefWidth="132.0" />
                         <DatePicker fx:id="toDate" prefHeight="25.0" prefWidth="132.0" />
                      </children>
@@ -71,11 +71,11 @@
                   <Separator />
                   <HBox alignment="CENTER" prefHeight="40.0" spacing="10.0">
                      <children>
-                        <Label text="Ilość miejsc:" />
+                        <Label text="Seats:" />
                         <Spinner fx:id="seatsSpinner" prefHeight="25.0" prefWidth="70.0" />
-                        <Label layoutX="307.0" layoutY="24.0" text="Ubezpieczenie:" />
+                        <Label layoutX="307.0" layoutY="24.0" text="Insurance:" />
                         <CheckBox fx:id="insuranceCheckBox" mnemonicParsing="false" />
-                        <Button fx:id="buyTripButton" alignment="CENTER" mnemonicParsing="false" onAction="#buyTrip" styleClass="buyTripButton" stylesheets="@application.css" text="Zakup wybraną wycieczkę" />
+                        <Button fx:id="buyTripButton" alignment="CENTER" mnemonicParsing="false" onAction="#buyTrip" styleClass="buyTripButton" stylesheets="@application.css" text="Buy Selected Trip" />
                      </children>
                      <padding>
                         <Insets bottom="10.0" top="10.0" />
@@ -101,43 +101,43 @@
                      <children>
                         <HBox>
                            <children>
-                              <Label prefWidth="100.0" text="Wylot z:" />
+                              <Label prefWidth="100.0" text="Departure from:" />
                               <Label fx:id="fromCountryLabel" layoutX="10.0" layoutY="10.0" />
                            </children>
                         </HBox>
                         <HBox layoutX="10.0" layoutY="20.0">
                            <children>
-                              <Label prefWidth="100.0" text="Przylot do:" />
+                              <Label prefWidth="100.0" text="Arrival to:" />
                               <Label fx:id="toCountryLabel" layoutX="10.0" layoutY="10.0" />
                            </children>
                         </HBox>
                         <HBox layoutX="10.0" layoutY="42.0">
                            <children>
-                              <Label prefWidth="100.0" text="Data wylotu:" />
+                              <Label prefWidth="100.0" text="Departure Date:" />
                               <Label fx:id="dateArrivalLabel" layoutX="10.0" layoutY="10.0" />
                            </children>
                         </HBox>
                         <HBox layoutX="10.0" layoutY="64.0">
                            <children>
-                              <Label prefWidth="100.0" text="Data powrotu:" />
+                              <Label prefWidth="100.0" text="Return Date:" />
                               <Label fx:id="dateDepartureLabel" layoutX="10.0" layoutY="10.0" />
                            </children>
                         </HBox>
                         <HBox layoutX="10.0" layoutY="86.0">
                            <children>
-                              <Label prefWidth="100.0" text="Ilość dni:" />
+                              <Label prefWidth="100.0" text="Duration:" />
                               <Label fx:id="durationLabel" layoutX="10.0" layoutY="10.0" />
                            </children>
                         </HBox>
                         <HBox layoutX="10.0" layoutY="108.0">
                            <children>
-                              <Label prefWidth="100.0" text="Cena za osobę:" />
+                              <Label prefWidth="100.0" text="Price per person:" />
                               <Label fx:id="priceLabel" layoutX="10.0" layoutY="10.0" />
                            </children>
                         </HBox>
                         <HBox layoutX="10.0" layoutY="130.0">
                            <children>
-                              <Label prefWidth="100.0" text="Wolne miejsca:" />
+                              <Label prefWidth="100.0" text="Free seats:" />
                               <Label fx:id="freeSeatsLabel" layoutX="10.0" layoutY="10.0" />
                            </children>
                         </HBox>
@@ -150,13 +150,13 @@
                         </HBox>
                         <HBox layoutX="10.0" layoutY="182.0">
                            <children>
-                              <Label prefWidth="100.0" text="Miasto:" />
+                              <Label prefWidth="100.0" text="City:" />
                               <Label fx:id="hotelCityLabel" layoutX="10.0" layoutY="10.0" />
                            </children>
                         </HBox>
                         <HBox layoutX="10.0" layoutY="204.0">
                            <children>
-                              <Label prefWidth="100.0" text="Standard:" />
+                              <Label prefWidth="100.0" text="Rating:" />
                               <Label fx:id="hotelRatingLabel" layoutX="10.0" layoutY="10.0" />
                            </children>
                         </HBox>
@@ -170,7 +170,7 @@
          <left>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="previousTrip" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showPreviousTrip" prefWidth="100.0" text="Poprzednia" />
+                  <Button fx:id="previousTrip" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showPreviousTrip" prefWidth="100.0" text="Previous" />
                </children>
                <BorderPane.margin>
                   <Insets left="10.0" />
@@ -180,7 +180,7 @@
          <right>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="nextTrip" mnemonicParsing="false" onAction="#showNextTrip" prefWidth="100.0" text="Następna" />
+                  <Button fx:id="nextTrip" mnemonicParsing="false" onAction="#showNextTrip" prefWidth="100.0" text="Next" />
                </children>
                <BorderPane.margin>
                   <Insets right="10.0" />

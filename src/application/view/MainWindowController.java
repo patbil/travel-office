@@ -138,7 +138,7 @@ public class MainWindowController implements Initializable {
     
     @FXML
     public void login() throws IOException {
-    	if (loginMenuItem.getText().equals("Zaloguj")) {
+    	if (loginMenuItem.getText().equals("Login")) {
     		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml"));
         	VBox loginWindow = fxmlLoader.load();
         	
@@ -147,8 +147,8 @@ public class MainWindowController implements Initializable {
         	loginStage.setScene(scene);
         	loginStage.show();
     	} else {
-    		mainWindow.getStage().setTitle(TravelOfficeHelper.getInstance().getBASE_TITLE() + "anonimowy u�ytkownik");
-    		loginMenuItem.setText("Zaloguj");
+    		mainWindow.getStage().setTitle(TravelOfficeHelper.getInstance().getBASE_TITLE() + "anonymous user");
+    		loginMenuItem.setText("Login");
     		historyMenuItem.setDisable(true);
     	}
     }
@@ -190,17 +190,17 @@ public class MainWindowController implements Initializable {
     
     @FXML
     public void buyTrip() {
-		if (loginMenuItem.getText().equals("Zaloguj")) {
-			Alert loginErrorAlert = new Alert(AlertType.ERROR, "Przed zakupieniem wycieczki musisz si� zalogowa�.", ButtonType.OK);
+		if (loginMenuItem.getText().equals("Login")) {
+			Alert loginErrorAlert = new Alert(AlertType.ERROR, "You must log in before purchasing a trip.", ButtonType.OK);
 			loginErrorAlert.setHeaderText(null);
 			loginErrorAlert.show();
 			return;
 		}
 		
 		if (!tripIsSelected) {
-			Alert loginErrorAlert = new Alert(AlertType.WARNING, "Brak dost�pnych ofert wycieczek. "
+			Alert loginErrorAlert = new Alert(AlertType.WARNING, "No available trip offers. "
 					+ System.lineSeparator()
-					+ "Zmie� kryteria wyszukiwania i spr�buj ponownie.", ButtonType.OK);
+					+ "Change search criteria and try again.", ButtonType.OK);
 			loginErrorAlert.setHeaderText(null);
 			loginErrorAlert.show();
 			return;
@@ -211,7 +211,7 @@ public class MainWindowController implements Initializable {
 				trips.get(selectedTripIndex).getFreeSeats(), 
 				seatsSpinner.getValue().shortValue(), 
 				insuranceCheckBox.isSelected() ? (short) 150 : (short) 0) > 0) {
-			Alert tripBoughtAlert = new Alert(AlertType.INFORMATION, "Wycieczka zosta�a zakupiona", ButtonType.OK);
+			Alert tripBoughtAlert = new Alert(AlertType.INFORMATION, "Trip has been purchased", ButtonType.OK);
 	    	tripBoughtAlert.setHeaderText(null);
 	    	tripBoughtAlert.show();
 		}
@@ -290,7 +290,7 @@ public class MainWindowController implements Initializable {
 			dateArrivalLabel.setText(trip.getArrivalDateTime().toString().substring(0, 19));
 			dateDepartureLabel.setText(trip.getDepartureDateTime().toString().substring(0, 19));
 			durationLabel.setText(String.valueOf(trip.getDuration()));
-			priceLabel.setText(trip.getPrice().divide(new BigDecimal(100)).setScale(2, RoundingMode.HALF_DOWN).toString() + " z�");
+			priceLabel.setText(trip.getPrice().divide(new BigDecimal(100)).setScale(2, RoundingMode.HALF_DOWN).toString() + " PLN");
 			freeSeatsLabel.setText(String.valueOf(trip.getFreeSeats()));
 			hotelNameLabel.setText(trip.getHotel().getName());
 			hotelCityLabel.setText(trip.getHotel().getCity());
