@@ -36,7 +36,7 @@ Travel Office is a JavaFX-based desktop application that allows users to:
 - **MySQL** for database management
 - **Eclipse IDE** (recommended)
 
-## ⚙️ Prerequisites
+## Prerequisites
 
 Before running this project, ensure you have:
 
