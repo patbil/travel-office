@@ -154,12 +154,14 @@ travel-office/
 
 ## License
 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 This project was created for educational purposes as part of university coursework.
 
 ## Academic Context
 
 **Course:** Java Programming  
-**Institution:** [Your University Name]  
+**Institution:** Kielce University of Technology
 **Year:** 2020
 
 ---
