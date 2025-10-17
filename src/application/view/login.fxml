@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefWidth="300.0" spacing="5.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.LoginController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="50.0" spacing="10.0">
+         <children>
+            <Label prefWidth="60.0" text="Login:" />
+            <TextField fx:id="loginField" />
+         </children>
+         <opaqueInsets>
+            <Insets left="10.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </HBox>
+      <HBox prefHeight="50.0" spacing="10.0">
+         <children>
+            <Label prefWidth="60.0" text="Hasło:" />
+            <PasswordField fx:id="passwordField" />
+         </children>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" spacing="20.0">
+         <children>
+            <Button fx:id="loginButton" mnemonicParsing="false" onAction="#login" prefWidth="100.0" styleClass="btn" stylesheets="@application.css" text="Zaloguj" />
+            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#close" prefWidth="100.0" styleClass="btn" stylesheets="@application.css" text="Anuluj" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>

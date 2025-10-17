@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.MainWindowController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="Plik">
+          <items>
+            <MenuItem fx:id="loginMenuItem" mnemonicParsing="false" onAction="#login" text="Zaloguj">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="L" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="historyMenuItem" disable="true" mnemonicParsing="false" onAction="#showHistory" text="Historia">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="H" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" onAction="#close" text="Wyjście" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="O aplikacji">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Autor" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+      <BorderPane>
+         <top>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="45.0" prefWidth="800.0" spacing="10.0">
+                     <children>
+                        <Label text="Wylot z:" />
+                        <ComboBox fx:id="fromCountryChoice" prefWidth="120.0" />
+                        <Separator orientation="VERTICAL" prefHeight="200.0" />
+                        <Label text="do:" />
+                        <ComboBox fx:id="toCountryChoice" layoutX="95.0" layoutY="20.0" prefWidth="120.0" />
+                        <Separator orientation="VERTICAL" prefHeight="200.0" />
+                        <Label text="Między datami:" />
+                        <DatePicker fx:id="fromDate" prefHeight="25.0" prefWidth="132.0" />
+                        <DatePicker fx:id="toDate" prefHeight="25.0" prefWidth="132.0" />
+                     </children>
+                  </HBox>
+                  <Separator prefHeight="0.0" prefWidth="640.0" />
+               </children>
+            </VBox>
+         </top>
+         <bottom>
+            <VBox alignment="BOTTOM_CENTER" BorderPane.alignment="CENTER">
+               <children>
+                  <Separator />
+                  <HBox alignment="CENTER" prefHeight="40.0" spacing="10.0">
+                     <children>
+                        <Label text="Ilość miejsc:" />
+                        <Spinner fx:id="seatsSpinner" prefHeight="25.0" prefWidth="70.0" />
+                        <Label layoutX="307.0" layoutY="24.0" text="Ubezpieczenie:" />
+                        <CheckBox fx:id="insuranceCheckBox" mnemonicParsing="false" />
+                        <Button fx:id="buyTripButton" alignment="CENTER" mnemonicParsing="false" onAction="#buyTrip" styleClass="buyTripButton" stylesheets="@application.css" text="Zakup wybraną wycieczkę" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </bottom>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <center>
+            <HBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="680.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="tripImage" fitHeight="280.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin></ImageView>
+                  <VBox prefWidth="300.0" spacing="5.0">
+                     <HBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </HBox.margin>
+                     <children>
+                        <HBox>
+                           <children>
+                              <Label prefWidth="100.0" text="Wylot z:" />
+                              <Label fx:id="fromCountryLabel" layoutX="10.0" layoutY="10.0" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="20.0">
+                           <children>
+                              <Label prefWidth="100.0" text="Przylot do:" />
+                              <Label fx:id="toCountryLabel" layoutX="10.0" layoutY="10.0" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="42.0">
+                           <children>
+                              <Label prefWidth="100.0" text="Data wylotu:" />
+                              <Label fx:id="dateArrivalLabel" layoutX="10.0" layoutY="10.0" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="64.0">
+                           <children>
+                              <Label prefWidth="100.0" text="Data powrotu:" />
+                              <Label fx:id="dateDepartureLabel" layoutX="10.0" layoutY="10.0" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="86.0">
+                           <children>
+                              <Label prefWidth="100.0" text="Ilość dni:" />
+                              <Label fx:id="durationLabel" layoutX="10.0" layoutY="10.0" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="108.0">
+                           <children>
+                              <Label prefWidth="100.0" text="Cena za osobę:" />
+                              <Label fx:id="priceLabel" layoutX="10.0" layoutY="10.0" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="130.0">
+                           <children>
+                              <Label prefWidth="100.0" text="Wolne miejsca:" />
+                              <Label fx:id="freeSeatsLabel" layoutX="10.0" layoutY="10.0" />
+                           </children>
+                        </HBox>
+                        <Separator prefWidth="200.0" />
+                        <HBox layoutX="10.0" layoutY="152.0">
+                           <children>
+                              <Label prefWidth="100.0" text="Hotel:" />
+                              <Label fx:id="hotelNameLabel" layoutX="10.0" layoutY="10.0" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="182.0">
+                           <children>
+                              <Label prefWidth="100.0" text="Miasto:" />
+                              <Label fx:id="hotelCityLabel" layoutX="10.0" layoutY="10.0" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="204.0">
+                           <children>
+                              <Label prefWidth="100.0" text="Standard:" />
+                              <Label fx:id="hotelRatingLabel" layoutX="10.0" layoutY="10.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding></VBox>
+               </children>
+            </HBox>
+         </center>
+         <left>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="previousTrip" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showPreviousTrip" prefWidth="100.0" text="Poprzednia" />
+               </children>
+               <BorderPane.margin>
+                  <Insets left="10.0" />
+               </BorderPane.margin>
+            </VBox>
+         </left>
+         <right>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="nextTrip" mnemonicParsing="false" onAction="#showNextTrip" prefWidth="100.0" text="Następna" />
+               </children>
+               <BorderPane.margin>
+                  <Insets right="10.0" />
+               </BorderPane.margin>
+            </VBox>
+         </right>
+      </BorderPane>
+  </children>
+</VBox>
