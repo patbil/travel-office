@@ -1,4 +1,4 @@
-# Travel Office Management System
+# Travel Office
 
 A desktop application for managing a travel agency, built with JavaFX and MySQL. This project was developed as part of the "Java Programming" course at university.
 
